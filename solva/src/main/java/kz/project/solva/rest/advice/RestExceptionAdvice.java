@@ -21,6 +21,7 @@ public class RestExceptionAdvice extends ResponseEntityExceptionHandler {
   public ResponseEntity<Object> handleEntityNotFound(EntityNotFoundException ex, WebRequest request) {
     return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
   }
+
   @ExceptionHandler(Exception.class)
   public ResponseEntity<Object> handleGlobalException(Exception ex,WebRequest request){
     return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
