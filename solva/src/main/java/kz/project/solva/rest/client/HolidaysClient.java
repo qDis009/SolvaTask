@@ -16,6 +16,7 @@ import java.util.Objects;
 public class HolidaysClient {
   private final HolidaysClientProperty holidaysClientProperty;
   private final RestTemplate restTemplate;
+
   @Cacheable("holidays")
   public List<HolidaysResponse> getHolidays(int year, String countryCode) {
     HolidaysResponse[] holidays = restTemplate.getForObject(holidaysClientProperty.getUrl(),
